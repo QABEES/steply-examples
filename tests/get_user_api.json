@@ -1,0 +1,20 @@
+{
+    "scenarioName": "GET GITHUB USER DETAILS AND VALIDATE RESPONSE",
+    "steps": [
+        {
+            "name": "get_user_details",
+            "url": "${github.host}/users/octocat",
+            "method": "GET",
+            "request": {
+            },
+            "verify": {
+                "status": 200,
+                "body": {
+                    "login" : "octocat",
+                    "id" : 583231,
+                    "type" : "User"
+                }
+            }
+        }
+    ]
+}
