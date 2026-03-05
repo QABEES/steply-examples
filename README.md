@@ -7,7 +7,7 @@ steply --scenario tests/get_user_api.json --target-env env/sit1.properties
 ```
 
 ## Sample output:
-```json
+```js
 ➜  steply-examples git:(main) ✗ steply --scenario tests/get_user_api.json --target-env env/sit1.properties 
 
 2026-03-05 10:01:14,603 [main]: 
