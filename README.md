@@ -1,12 +1,20 @@
 # steply-examples
-Sample tests using Steply CLI
+Sample tests using [Steply](https://github.com/QABEES/steply) CLI
+
+## Install Steply
+```shell
+curl -fsSL https://raw.githubusercontent.com/QABEES/steply/main/scripts/install.sh | bash
+```
 
 ## Run a test:
 ```shell
 steply --scenario tests/get_user_api.json --target-env env/sit1.properties
 ```
-
 ## Sample output:
+
+<details>
+<summary>Console Output ◀ (Click to expand)</summary>
+
 ```js
 ➜  steply-examples git:(main) ✗ steply --scenario tests/get_user_api.json --target-env env/sit1.properties 
 
@@ -116,3 +124,6 @@ Failure count: 0
 ✅ Tests passed
 ➜  steply-examples git:(main) ✗ 
 ```
+
+</details>
+
