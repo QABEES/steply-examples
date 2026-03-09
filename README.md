@@ -32,17 +32,21 @@ and can also be triggered manually.
 
 You can also trigger the workflow manually via the **Actions** tab using `workflow_dispatch`.
 
-## CI Status with your changes
+## CI Status with your changes (Collaborate here 🤝)
 See last successful CI runs here:
 - CI Job Link: https://github.com/QABEES/steply-examples/actions
 - For any changes(or new example scenario) raise a PR and see your changes being built [here](https://github.com/QABEES/steply-examples/actions). 👈
 
-## CI Build Status Example:
+## CI Status Example:
 <details>
 <summary>CI Build Passed ✅️ ◀ (Click to expand)</summary>
-
 <img width="2040" height="1266" alt="image" src="https://github.com/user-attachments/assets/aa241091-e326-4217-b209-4906550aec53" />
+</details>
 
+## CI Status(Java 17, 21, 25 LTS):
+<details>
+<summary>CI Last Passed(Java17, Java21, Java25) ✅️ ◀ (Click to expand)</summary>
+<img width="1830" height="1354" alt="image" src="https://github.com/user-attachments/assets/687e92c5-cc22-48f5-aec3-ccc3bc924117" />
 </details>
 
 ## Sample output:
