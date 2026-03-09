@@ -22,6 +22,7 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      # Installs Steply CLI (no-JRE variant) and adds it to PATH
       - name: Install Steply
         run: |
           curl -fsSL https://raw.githubusercontent.com/QABEES/steply/main/scripts/install_no_jre.sh | bash
@@ -29,3 +30,18 @@ jobs:
 
       - name: Run tests
         run: steply --scenario tests/get_user_api.json --target-env env/sit1.properties
+
+      # TEST REPORTS & LOGS:
+      # --------------------
+      # if: always() - Upload reports regardless of test pass/fail so failures can be diagnosed
+      # retention-days: 7 - Reports are retained for 7 days and downloadable from the Actions run summary
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: steply-test-reports
+          path: |
+            target/zerocode-junit-granular-report.csv
+            target/zerocode-junit-interactive-fuzzy-search.html
+            target/logs/
+          retention-days: 7
