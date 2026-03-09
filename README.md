@@ -10,8 +10,34 @@ curl -fsSL https://raw.githubusercontent.com/QABEES/steply/main/scripts/install.
 ```shell
 steply --scenario tests/get_user_api.json --target-env env/sit1.properties
 ```
-## Sample output:
 
+## Run a test pack:
+```shell
+steply -f tests --target-env env/sit1.properties
+```
+
+## CI Integration
+
+This project includes a GitHub Actions workflow (`.github/workflows/ci.yml`) that runs automatically on push and pull requests to `main`, 
+and can also be triggered manually.
+
+**Workflow: `CI`**
+- **Runs on:** `ubuntu-latest`
+
+**Steps:**
+1. Checkout the repository
+2. Set up Java 17 (Temurin distribution)
+3. Install Steply (no-JRE variant, added to `PATH`)
+4. Run tests: `steply --scenario tests/get_user_api.json --target-env env/sit1.properties`
+
+You can also trigger the workflow manually via the **Actions** tab using `workflow_dispatch`.
+
+## CI Status with your changes
+See last successful CI runs here:
+- CI Job Link: https://github.com/QABEES/steply-examples/actions
+- For any changes(or new example scenario) raise a PR and see your changes being built [here](https://github.com/QABEES/steply-examples/actions). 👈
+
+## Sample output:
 <details>
 <summary>Console Output ◀ (Click to expand)</summary>
 
