@@ -37,9 +37,17 @@ See last successful CI runs here:
 - CI Job Link: https://github.com/QABEES/steply-examples/actions
 - For any changes(or new example scenario) raise a PR and see your changes being built [here](https://github.com/QABEES/steply-examples/actions). 👈
 
+## CI Build Status Example:
+<details>
+<summary>CI Build Passed ✅️ ◀ (Click to expand)</summary>
+
+<img width="2040" height="1266" alt="image" src="https://github.com/user-attachments/assets/aa241091-e326-4217-b209-4906550aec53" />
+
+</details>
+
 ## Sample output:
 <details>
-<summary>Console Output ◀ (Click to expand)</summary>
+<summary>Test Console Output ◀ (Click to expand)</summary>
 
 ```js
 ➜  steply-examples git:(main) ✗ steply --scenario tests/get_user_api.json --target-env env/sit1.properties 
