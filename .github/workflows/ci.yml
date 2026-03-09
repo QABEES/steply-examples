@@ -15,7 +15,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+        
+      - name: Set up Java (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+          
       - name: Install Steply
         shell: bash
         run: |
@@ -29,8 +36,32 @@ jobs:
           command -v steply
           steply --version || true
 
+      - name: Patch Steply to use system Java
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Find the installed distribution (matches your log path)
+          STEPly_HOME="$HOME/.local/share/steply"
+          DIST_DIR="$(find "$STEPly_HOME" -maxdepth 2 -type d -name 'steply-dist' | head -n 1)"
+          echo "DIST_DIR=$DIST_DIR"
+
+          # Replace bundled-java invocation with `java`
+          # (This assumes line 6 is the bundled java call as in your error)
+          sed -i 's|.*/jre/bin/java|java|g' "$DIST_DIR/bin/steply.sh"
+
+          # show first lines for debugging
+          head -n 20 "$DIST_DIR/bin/steply.sh"
+          
       - name: Run Steply scenario
         shell: bash
         run: |
           set -euo pipefail
+          java -version
           steply --scenario tests/get_user_api.json --target-env env/sit1.properties
+          
+      # - name: Run Steply scenario
+      #   shell: bash
+      #   run: |
+      #     set -euo pipefail
+      #     steply --scenario tests/get_user_api.json --target-env env/sit1.properties
