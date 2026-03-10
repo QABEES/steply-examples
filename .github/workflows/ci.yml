@@ -28,6 +28,9 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/QABEES/steply/main/scripts/install_no_jre.sh | bash
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
+      - name: Steply version
+        run: steply --version
+
       - name: Run tests
         run: steply --scenario tests/get_user_api.json --target-env env/sit1.properties
 
