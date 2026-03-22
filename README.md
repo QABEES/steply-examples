@@ -17,20 +17,18 @@ steply -f tests --target-env env/sit1.properties
 ```
 
 ## CI Integration
-
 This project includes a GitHub Actions workflow (`.github/workflows/ci.yml`) that runs automatically on push and pull requests to `main`, 
-and can also be triggered manually.
-
-**Workflow: `CI`**
-- **Runs on:** `ubuntu-latest`
+- Go to the **Actions** tab [here](https://github.com/QABEES/steply-examples/actions) to see the past CI build.
+- You can also trigger it manually using `workflow_dispatch`.
 
 **Steps:**
 1. Checkout the repository
 2. Set up Java 17 (Temurin distribution)
-3. Install Steply (no-JRE variant, added to `PATH`)
+3. Install Steply
 4. Run tests: `steply --scenario tests/get_user_api.json --target-env env/sit1.properties`
 
-You can also trigger the workflow manually via the **Actions** tab using `workflow_dispatch`.
+**CI Workflow**
+- **Runs on:** `ubuntu-latest`
 
 ## CI Status with your changes (Collaborate here 🤝)
 See last successful CI runs here:

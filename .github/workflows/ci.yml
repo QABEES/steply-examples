@@ -22,10 +22,10 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      # Installs Steply CLI (no-JRE variant) and adds it to PATH
+      # Installs Steply CLI and adds it to PATH
       - name: Install Steply
         run: |
-          curl -fsSL https://raw.githubusercontent.com/QABEES/steply/main/scripts/install_no_jre.sh | bash
+          curl -fsSL https://raw.githubusercontent.com/QABEES/steply/main/scripts/install.sh | bash
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Steply version

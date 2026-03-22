@@ -30,7 +30,7 @@ jobs:
 
       - name: Install Steply
         run: |
-          curl -fsSL https://raw.githubusercontent.com/QABEES/steply/main/scripts/install_no_jre.sh | bash
+          curl -fsSL https://raw.githubusercontent.com/QABEES/steply/main/scripts/install.sh | bash
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Run tests
